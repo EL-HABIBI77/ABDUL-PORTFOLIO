@@ -1,0 +1,241 @@
+/* This is navigation bar, it will stay in place when we are going into different section */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.6); /* this will give a black-bueish background */
+  position: sticky; /*the navbar will scroll with the page until it reach to of screen */
+  top: 0;
+  width: 100%;
+  z-index: 999; /* makes sure it's above everything */
+  backdrop-filter: blur(15px); /* blurry background */
+  box-shadow: 0 2px 10px rgba(225, 222, 222, 0.2); /* shadow under navbar */
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 1rem 1rem;
+}
+
+/* these are properties of the word "my portfolio" on the left side of the nav bar */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00ffff;
+}
+
+/* Navigation links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2.0rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: rgb(231, 162, 162);
+  font-weight: 500;
+  transition: color 0.5s ease;
+}
+
+.nav-links li a:hover 
+{
+  color: #04c6fc;
+}
+
+/* it will help smooth scroll to the location needed */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reset default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+
+/* styling the body */
+body {
+  background: linear-gradient(to right, #0f2027, #203a43, #276985); /* dark gradient */
+  color: white;
+  line-height: 1.7;
+}
+
+/* This keeps content at the center and ensure it is padded */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+}
+
+/* This is the top section with the profile and introduction*/
+.hero {
+  background-color: rgba(255, 255, 255, 0.02);
+  text-align: center;
+  padding: 4rem 2rem;
+  animation: fadeInTop 2.0s ease-out;
+}
+
+/* Profile image */
+.hero img {
+  border-radius: 60%; /* makes it round */
+  border: 4px solid #00ffff;
+  width: 150px;
+  margin-bottom: 1rem;
+  transition: transform 0.5s ease;
+}
+
+/* Animating the profile image */
+.hero img:hover {
+  transform: rotate(15deg) scale(1.05);
+}
+
+/* Name heading */
+.hero h1 {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+  color: #00ffff;
+  text-transform: uppercase;
+}
+
+/* Aspiring software engineer part */
+.hero h2 {
+  font-size: 1.7rem;
+  color: #8dc797;
+}
+
+/* heading section */
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  border-left: 5px solid #00ffff;
+  padding-left: 0.5rem;
+  animation: fadeIn 1.5s ease;
+}
+
+/* ============ ABOUT SECTION ============ */
+.about p {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  animation: slideUp 1s ease;
+}
+
+/* resume becomes downloadable when when clicked */
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  background-color: #00ffff;
+  color: black;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* it show how the button will behave when clicked */
+.btn:hover {
+  background-color: #43eded;
+}
+
+/* SKILLS, PROJECTS, CONTACT LIST */
+.skills ul,
+.projects ul,
+.contact ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.skills li,
+.projects li,
+.contact li {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 0.7rem;
+  margin: 0.4rem 0;
+  border-left: 4px solid #00ffff;
+}
+
+.skills li:hover,
+.projects li:hover {
+  background-color: rgba(110, 7, 7, 0.08);
+}
+
+/* links to the projects */
+.projects a {
+  color: #00ffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.projects a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+/* links of contacts */
+.contact li a {
+  color: #00ffff;
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.contact li a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+/* footer */
+footer {
+  background-color: rgba(131, 94, 94, 0.02);
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+  color: #eccccc;
+}
+
+/* animations */
+@keyframes fadeInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+/* This will ensure our website is responsive on other sites */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero h2 {
+    font-size: 1.2rem;
+  }
+
+  .btn {
+    padding: 0.6rem 1.2rem;
+  }
+}
